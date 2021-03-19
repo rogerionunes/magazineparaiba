@@ -1,0 +1,14 @@
+version: "3"
+services:
+ web:
+  image: 'php:7.0-apache'
+  ports:
+   - '80:80'
+  volumes:
+   - ./..:/var/www/html/
+  networks: 
+   - service_gestor_network
+networks: 
+ service_gestor_network:  
+
+ 
