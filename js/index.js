@@ -1,4 +1,4 @@
-jQuery(function($){
+jQuery(function($) {
 
   var productList1 = [];
   var productList2 = [];
@@ -186,6 +186,10 @@ jQuery(function($){
 
   var productHtml = '';
 
+  /**
+   * HOME
+   */
+
   $.each(productList3, function(i, product) {
     productHtml += `
                 <li>
@@ -200,55 +204,84 @@ jQuery(function($){
                 `;
   });
 
-  $('.productList3').html(productHtml);
+  $('#celulares').on('click', function(e) {
+    searchProducts('ids', [4, 7, 11, 12]);
+  });
 
-  /**
-   * EVENTS
-   */
+  $('#moveis').on('click', function(e) {
+    alert('Não há móveis disponiveis no momento.')
+  });
+
+  $('#eletrodomestricos').on('click', function(e) {
+    searchProducts('ids', [1]);
+  });
+
+  $('#tvVideo').on('click', function(e) {
+    searchProducts('ids', [10]);
+  });
+
+  $('#informatica').on('click', function(e) {
+    searchProducts('ids', [2,3,8]);
+  });
+
+  $('.productList3').html(productHtml);
 
   $('#formSearch').on('submit', function(e) {
       e.preventDefault();
 
       var search = $('#search').val();
-      var productListAll = [];
-
-      productListAll = productListAll.concat(productList1).concat(productList2).concat(productList3);
-
-      // const filtered = productListAll.filter(e => e.name.match("/"+$('#search').val()+"/"));
-      const filtered = productListAll.filter((item)=>{return item.name.toUpperCase().match(search.toUpperCase())});
-
-      if (filtered.length > 0 && search != '') {
-          $('.aa-product-area').hide();
-          $('.aa-product-area-search').show();
-
-          var productHtml = '';
-
-          $.each(filtered, function(i, product) {
-              productHtml += `
-                        <li>
-                          <figure>
-                            <a class="aa-product-img" href="#"><img src="${product.pathImage}" alt="${product.altName}" height="200"></a>
-                              <figcaption>
-                              <h4 class="aa-product-title"><a href="#">${product.name}</a></h4>
-                              De <span class="aa-product-price"><del>${product.valorDe}</del></span> por <span class="aa-product-price"><b>${product.valorPor}</b></span>
-                            </figcaption>
-                          </figure>
-                        </li>
-                        `;
-          });
-
-          $('.productListSearch').html(productHtml);
-          $('.navbar').hide();
-          // $('#buttonSearch').attr('disabled', true);
-          $('#tituloProdutosEncontrados').html(filtered.length == 1 ? filtered.length+' Produto Encontrado:' : filtered.length+' Produtos Encontrados:');
-          $('.aa-product-img').focus();
-      } else {
-          // $('#buttonSearch').attr('disabled', false);
-          $('.navbar').show();
-          $('.aa-product-area').show();
-          $('.aa-product-area-search').hide();
-      }
+      searchProducts(search);
   });
+
+  function searchProducts(search, products) {
+    var productListAll = [];
+    var filtered = [];
+
+    productListAll = productListAll.concat(productList1).concat(productList2).concat(productList3);
+
+    if (search == 'ids') {
+      filtered = productListAll.filter((item)=>{return products.includes(item.id)});
+    } else {
+      filtered = productListAll.filter((item)=>{return item.name.toUpperCase().match(search.toUpperCase())});
+    }
+    console.log(filtered);
+
+    if (filtered.length > 0 && search != '') {
+        if (search != 'ids') {
+          $('.navbar').hide();
+        }
+        $('.aa-product-area').hide();
+        $('.aa-product-area-search').show();
+        
+
+        var productHtml = '';
+
+        $.each(filtered, function(i, product) {
+            productHtml += `
+                      <li>
+                        <figure>
+                          <a class="aa-product-img" href="product-detail.html?${product.id}"><img src="${product.pathImage}" alt="${product.altName}" height="200"></a>
+                            <figcaption>
+                            <h4 class="aa-product-title"><a href="#">${product.name}</a></h4>
+                            De <span class="aa-product-price"><del>${product.valorDe}</del></span> por <span class="aa-product-price"><b>${product.valorPor}</b></span>
+                          </figcaption>
+                        </figure>
+                      </li>
+                      `;
+        });
+
+        $('.productListSearch').html(productHtml);
+        // $('#buttonSearch').attr('disabled', true);
+        $('#tituloProdutosEncontrados').html(filtered.length == 1 ? filtered.length+' Produto Encontrado:' : filtered.length+' Produtos Encontrados:');
+        $('.aa-product-img').focus();
+    } else {
+        // $('#buttonSearch').attr('disabled', false);
+        $('.navbar').show();
+        $('.aa-product-area').show();
+        $('.aa-product-area-search').hide();
+    }
+
+  }
 
 
   $('#formSearch').on('keyup', function(e) {
@@ -279,17 +312,18 @@ jQuery(function($){
     }
   });
 
-  var productListAll = [];
+  // localStorage.setItem("lastname", "Smith");
+  // alert(localStorage.getItem("lastname"));
+  // localStorage.removeItem("key");
 
-  productListAll = productListAll.concat(productList1).concat(productList2).concat(productList3);  
-  
-  const idProduto = (window.location.search).substring(1);
+  var productListAll = []; 
+  var idProduto = (window.location.search).substring(1);
+
+  productListAll = productListAll.concat(productList1).concat(productList2).concat(productList3); 
 
   if (idProduto != '') {
 
     var produtoAtual = productListAll.filter(e => e.id == idProduto);
-
-    console.log(produtoAtual);
 
     $('.productName').html(produtoAtual[0]['name']);
     $('.productImg').attr('src', produtoAtual[0]['pathImage']).attr('alt', produtoAtual[0]['altName']);
@@ -299,6 +333,7 @@ jQuery(function($){
     $('.productPriceParcelas').html(produtoAtual[0]['valorParcelas']);
     $('.productDescription').html(produtoAtual[0]['descricao']);
     $('.productNameFirst').html(produtoAtual[0]['name'].split(' ')[0] + ' ' + produtoAtual[0]['name'].split(' ')[1]);
+    $('.aa-add-to-cart-btn').attr('href', 'checkout.html?'+idProduto);
   }
     
 });
