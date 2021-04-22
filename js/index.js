@@ -58,10 +58,12 @@ jQuery(function($) {
     productHtml += `
                 <li>
                   <figure>
-                    <a class="aa-product-img" href="product-detail.html?${product.id}"><img src="${product.pathImage}" alt="${product.altName}" height="200"></a>
+                    <a class="aa-product-img" href="product-detail.html?${product.id}#tituloPagina"><img src="${product.pathImage}" alt="${product.altName}" height="200"></a>
                       <figcaption>
-                      <h4 class="aa-product-title"><a href="#">${product.name}</a></h4>
-                      De <span class="aa-product-price"><del>${product.valorDe}</del></span> por <span class="aa-product-price"><b>${product.valorPor}</b></span>
+                      <h4 class="aa-product-title"><a href="product-detail.html?${product.id}#tituloPagina">
+                        ${product.name}
+                        <p>De <b class="aa-product-price">${product.valorDe}</b> por <b class="aa-product-price">${product.valorPor}</b></p>
+                      </a></h4>
                     </figcaption>
                   </figure>
                 </li>
@@ -96,14 +98,14 @@ jQuery(function($) {
 
   productList2.push({
     id: 7,
-    name: 'Smartphone LG K22+ 64GB Titan 4G Quad-Core 3GB RAM',
-    altName: 'Smartphone LG K22+ 64 gigabyte Titan 4G Quad-Core 3 gigabytes RAM',
-    valorDe: 'R$ 1.099,00',
-    valorPor: 'R$ 789,90',
-    valorParcelado: 'R$ 1.150,00',
-    valorParcelas: 'R$ 115,00',
+    name: 'Conjunto Sala de Jantar Mesa Tampo MDF 6 Cadeiras Clarice Espresso Móveis Animalle Chocolate/Off White/Café',
+    altName: 'Conjunto Sala de Jantar Mesa Tampo MDF Seis Cadeiras Clarice Espresso Móveis Animalle Chocolate/Off White/Café',
+    valorDe: 'R$ 2.461,11',
+    valorPor: 'R$ 1.777,94 ',
+    valorParcelado: 'R$ 3.000,00',
+    valorParcelas: 'R$ 300,00',
     pathImage: 'img/img06.jpg',
-    descricao: 'Surpreenda-se com este smartphone da LG! O K22+ entrega fotos de nível profissional, pois conta com um conjunto de 02 câmeras na parte de trás do aparelho, permitindo que você capte as melhores fotografias em qualquer situação. Faça fotos criativas e compartilhe nas redes sociais com a câmera frontal de 5MP. Sua tela de 6,2" V- Notch HD+ oferece a melhor experiência para você ver seus conteúdos de maneira mais imersiva e com visual impressionante. Com 64GB de armazenamento interno, ele é ideal para guardar todas suas fotos, músicas ou vídeos, além de permitir expansão desta capacidade através do cartão MicroSD. Este produto tem um processador Quad-Core e 3GB de memória RAM, e assim potencializar seu uso no dia a dia. A cor Titan destaca o design do smartphone, garantindo maior elegância em suas mãos. Fique sempre conectado nas redes sociais com a tecnologia 4G e Wi-Fi em um aparelho dual chip! Tenha bateria para o dia todo, afinal estamos falando de um aparelho com 3000mAh.'
+    descricao: 'Quanto charme neste conjunto de mesa Clarice com 6 cadeiras de jantar Clarice, não é mesmo? Tudo começa com esta linda combinação de cores clássicas e que são bem fáceis de inserir em um lar-style aconchegante e sofisticado. Outro ponto positivo são os detalhes: reparou que a estrutura da mesa tem essas linhas retas como toque final do visual? Demais!.'
   });
 
   productList2.push({
@@ -124,10 +126,12 @@ jQuery(function($) {
     productHtml += `
                 <li>
                   <figure>
-                    <a class="aa-product-img" href="product-detail.html?${product.id}"><img src="${product.pathImage}" alt="${product.altName}" height="200"></a>
+                    <a class="aa-product-img" href="product-detail.html?${product.id}#tituloPagina"><img src="${product.pathImage}" alt="${product.altName}" height="200"></a>
                       <figcaption>
-                      <h4 class="aa-product-title"><a href="#">${product.name}</a></h4>
-                      De <span class="aa-product-price"><del>${product.valorDe}</del></span> por <span class="aa-product-price"><b>${product.valorPor}</b></span>
+                      <h4 class="aa-product-title"><a href="product-detail.html?${product.id}#tituloPagina">
+                        ${product.name}
+                        <p>De <b class="aa-product-price">${product.valorDe}</b> por <b class="aa-product-price">${product.valorPor}</b></p>
+                      </a></h4>
                     </figcaption>
                   </figure>
                 </li>
@@ -194,10 +198,12 @@ jQuery(function($) {
     productHtml += `
                 <li>
                   <figure>
-                    <a class="aa-product-img" href="product-detail.html?${product.id}"><img src="${product.pathImage}" alt="${product.altName}" height="200"></a>
+                    <a class="aa-product-img" href="product-detail.html?${product.id}#tituloPagina"><img src="${product.pathImage}" alt="${product.altName}" height="200"></a>
                       <figcaption>
-                      <h4 class="aa-product-title"><a href="#">${product.name}</a></h4>
-                      De <span class="aa-product-price"><del>${product.valorDe}</del></span> por <span class="aa-product-price"><b>${product.valorPor}</b></span>
+                      <h4 class="aa-product-title"><a href="product-detail.html?${product.id}#tituloPagina">
+                        ${product.name}
+                        <p>De <b class="aa-product-price">${product.valorDe}</b> por <b class="aa-product-price">${product.valorPor}</b></p>
+                      </a></h4>
                     </figcaption>
                   </figure>
                 </li>
@@ -205,11 +211,11 @@ jQuery(function($) {
   });
 
   $('#celulares').on('click', function(e) {
-    searchProducts('ids', [4, 7, 11, 12]);
+    searchProducts('ids', [4, 11, 12]);
   });
 
   $('#moveis').on('click', function(e) {
-    alert('Não há móveis disponiveis no momento.')
+    searchProducts('ids', [7]);
   });
 
   $('#eletrodomestricos').on('click', function(e) {
@@ -257,13 +263,15 @@ jQuery(function($) {
         var productHtml = '';
 
         $.each(filtered, function(i, product) {
-            productHtml += `
+          productHtml += `
                       <li>
                         <figure>
-                          <a class="aa-product-img" href="product-detail.html?${product.id}"><img src="${product.pathImage}" alt="${product.altName}" height="200"></a>
+                          <a class="aa-product-img" href="product-detail.html?${product.id}#tituloPagina"><img src="${product.pathImage}" alt="${product.altName}" height="200"></a>
                             <figcaption>
-                            <h4 class="aa-product-title"><a href="#">${product.name}</a></h4>
-                            De <span class="aa-product-price"><del>${product.valorDe}</del></span> por <span class="aa-product-price"><b>${product.valorPor}</b></span>
+                            <h4 class="aa-product-title"><a href="product-detail.html?${product.id}#tituloPagina">
+                              ${product.name}
+                              <p>De <b class="aa-product-price">${product.valorDe}</b> por <b class="aa-product-price">${product.valorPor}</b></p>
+                            </a></h4>
                           </figcaption>
                         </figure>
                       </li>
@@ -337,4 +345,3 @@ jQuery(function($) {
   }
     
 });
-
