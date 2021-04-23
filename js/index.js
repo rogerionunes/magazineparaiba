@@ -58,11 +58,11 @@ jQuery(function($) {
     productHtml += `
                 <li>
                   <figure>
-                    <a class="aa-product-img" href="product-detail.html?${product.id}#tituloPagina"><img src="${product.pathImage}" alt="${product.altName}" height="200"></a>
+                    <a class="aa-product-img" href="product-detail.html?${product.id}#tituloPagina"  tabindex="0"><img src="${product.pathImage}" alt="${product.altName}" height="200"></a>
                       <figcaption>
-                      <h4 class="aa-product-title"><a href="product-detail.html?${product.id}#tituloPagina">
-                        ${product.name}
-                        <p>De <b class="aa-product-price">${product.valorDe}</b> por <b class="aa-product-price">${product.valorPor}</b></p>
+                      <h4 class="aa-product-title" ><a href="product-detail.html?${product.id}#tituloPagina" tabindex="-1">${product.name}
+
+                      <p tabindex="0">De <b class="aa-product-price">${product.valorDe}</b> por <b class="aa-product-price">${product.valorPor}</b></p>
                       </a></h4>
                     </figcaption>
                   </figure>
@@ -126,11 +126,11 @@ jQuery(function($) {
     productHtml += `
                 <li>
                   <figure>
-                    <a class="aa-product-img" href="product-detail.html?${product.id}#tituloPagina"><img src="${product.pathImage}" alt="${product.altName}" height="200"></a>
+                    <a class="aa-product-img" href="product-detail.html?${product.id}#tituloPagina"  tabindex="0"><img src="${product.pathImage}" alt="${product.altName}" height="200"></a>
                       <figcaption>
-                      <h4 class="aa-product-title"><a href="product-detail.html?${product.id}#tituloPagina">
-                        ${product.name}
-                        <p>De <b class="aa-product-price">${product.valorDe}</b> por <b class="aa-product-price">${product.valorPor}</b></p>
+                      <h4 class="aa-product-title" ><a href="product-detail.html?${product.id}#tituloPagina" tabindex="-1">${product.name}
+
+                      <p tabindex="0">De <b class="aa-product-price">${product.valorDe}</b> por <b class="aa-product-price">${product.valorPor}</b></p>
                       </a></h4>
                     </figcaption>
                   </figure>
@@ -198,11 +198,11 @@ jQuery(function($) {
     productHtml += `
                 <li>
                   <figure>
-                    <a class="aa-product-img" href="product-detail.html?${product.id}#tituloPagina"><img src="${product.pathImage}" alt="${product.altName}" height="200"></a>
+                    <a class="aa-product-img" href="product-detail.html?${product.id}#tituloPagina"  tabindex="0"><img src="${product.pathImage}" alt="${product.altName}" height="200"></a>
                       <figcaption>
-                      <h4 class="aa-product-title"><a href="product-detail.html?${product.id}#tituloPagina">
-                        ${product.name}
-                        <p>De <b class="aa-product-price">${product.valorDe}</b> por <b class="aa-product-price">${product.valorPor}</b></p>
+                      <h4 class="aa-product-title" ><a href="product-detail.html?${product.id}#tituloPagina" tabindex="-1">${product.name}
+
+                      <p tabindex="0">De <b class="aa-product-price">${product.valorDe}</b> por <b class="aa-product-price">${product.valorPor}</b></p>
                       </a></h4>
                     </figcaption>
                   </figure>
@@ -250,7 +250,11 @@ jQuery(function($) {
     } else {
       filtered = productListAll.filter((item)=>{return item.name.toUpperCase().match(search.toUpperCase())});
     }
-    console.log(filtered);
+
+    if (filtered.length == '0') {
+      alert('Nenhum Produto Encontrado');
+      return false;
+    }
 
     if (filtered.length > 0 && search != '') {
         if (search != 'ids') {
@@ -266,11 +270,11 @@ jQuery(function($) {
           productHtml += `
                       <li>
                         <figure>
-                          <a class="aa-product-img" href="product-detail.html?${product.id}#tituloPagina"><img src="${product.pathImage}" alt="${product.altName}" height="200"></a>
+                          <a class="aa-product-img" href="product-detail.html?${product.id}#tituloPagina"  tabindex="0"><img src="${product.pathImage}" alt="${product.altName}" height="200"></a>
                             <figcaption>
-                            <h4 class="aa-product-title"><a href="product-detail.html?${product.id}#tituloPagina">
-                              ${product.name}
-                              <p>De <b class="aa-product-price">${product.valorDe}</b> por <b class="aa-product-price">${product.valorPor}</b></p>
+                            <h4 class="aa-product-title" ><a href="product-detail.html?${product.id}#tituloPagina" tabindex="-1">${product.name}
+      
+                            <p tabindex="0">De <b class="aa-product-price">${product.valorDe}</b> por <b class="aa-product-price">${product.valorPor}</b></p>
                             </a></h4>
                           </figcaption>
                         </figure>

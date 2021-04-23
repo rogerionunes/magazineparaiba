@@ -63,10 +63,10 @@
             <div class="aa-header-top-area">
               <div class="aa-header-top-right">
                 <ul class="aa-head-top-nav-right">
-                  <li><a href="index.html" tabindex="1">Início</a></li>
-                  <li><a href="acessibilidade.html" tabindex="1">Acessibilidade</a></li>
-                  <li><a href="cadastreSe.html" tabindex="3">Cadastre-se</a></li>
-                  <li tabindex="4">Compre pelo telefone: (83) 9 9624-4330</li>
+                  <li><a href="index.html" tabindex="0">Início</a></li>
+                  <li><a href="acessibilidade.html" tabindex="0">Acessibilidade</a></li>
+                  <li><a href="cadastreSe.html" tabindex="0">Cadastre-se</a></li>
+                  <li tabindex="0">Compre pelo telefone: (83) 9 9624-4330</li>
                 </ul>
               </div>
             </div>
@@ -85,7 +85,7 @@
               <!-- logo  -->
               <div class="aa-logo">
                 <!-- Text based logo -->
-                <a href="index.html">
+                <a href="index.html" tabindex="0">
                   <span class="fa fa-shopping-cart" alt="Seja bem vindo ao site Magazine Paraíba, aqui você encontra tudo que precisa"></span>
                   <p>Magazine<strong>Paraíba</strong> <span>Aqui temos tudo que você precisa</span></p>
                 </a>
@@ -120,7 +120,7 @@
             </button>          
           </div>
           <div id="tituloPagina" class="navbar-collapse collapse nav navbar-nav" style="color:white">
-            <h1>Detalhe do Produto</h1><br>
+            <h1 tabindex="0">Detalhe do Produto</h1><br>
           </div>
         </div>
       </div>       
@@ -138,23 +138,25 @@
                 <!-- Modal view slider -->
                 <div class="col-md-5 col-sm-5 col-xs-12">                              
                   <div class="aa-product-view-slider">    
-                  <img class="productImg" src="img/view-slider/thumbnail/polo-shirt-1.png" height="300" width="300">
+                  <img class="productImg" src="img/view-slider/thumbnail/polo-shirt-1.png" height="300" width="300" tabindex="-1">
                   </div>
                 </div>
                 <!-- Modal view content -->
                 <div class="col-md-7 col-sm-7 col-xs-12">
                   <div class="aa-product-view-content">
-                    <h3 class="productName"></h3>
+                    <h3 class="productName" tabindex="0"></h3>
                     <div class="aa-price-block">
                       <br>
-                      <p>Avaliação: <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> 5,0</p>
-                      <p>De <b><span class="productPriceDe"></span></b></p>
-                      <p>Por <b><span class="productPricePor"></span></b></p>
-                      <p>ou por <b><span class="productPriceParcelado"></span></b> em 10x de <b><span class="productPriceParcelas"></span></b> sem juros </p>
+                      <p tabindex="0" alt="Avaliação de cinco estrelas">Avaliação: <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> 5,0</p>
+                      <div tabindex="0">
+                        <p>De <b><span class="productPriceDe"></span></b></p>
+                        <p>Por <b><span class="productPricePor"></span></b></p>
+                        <p>ou por <b><span class="productPriceParcelado"></span></b> em 10 parcelas de <b><span class="productPriceParcelas"></span></b> sem juros </p>
+                      </div>
                       <br>
-                      <p>Consultar prazo e valor do frete:</p>
+                      <p tabindex="0">Consultar prazo e valor do frete:</p>
                       <input id="cepInputText" type="text" maxlength="8" placeholder="Digite o CEP para consultar frete.">
-                      <p class="valorFrete"></p>
+                      <p class="valorFrete" tabindex="0"></p>
                     </div>
                     <div class="aa-prod-view-bottom">
                       <a class="aa-add-to-cart-btn" href="checkout.html">Comprar</a>
@@ -165,8 +167,8 @@
             </div>
             <div class="aa-product-details-bottom">
               <ul class="nav nav-tabs" id="myTab2">
-                <li><a href="#description" data-toggle="tab">Informações do Produto</a></li>
-                <li><a href="#review" data-toggle="tab">Avaliações</a></li>                
+                <li><a href="#description" data-toggle="tab" tabindex="0">Informações do Produto</a></li>
+                <li><a href="#review" data-toggle="tab" tabindex="0">Avaliações</a></li>                
               </ul>
 
               <!-- Tab panes -->
@@ -174,29 +176,30 @@
                 <div class="tab-pane fade in active" id="description">
                   <p class="productName"></p>
                   <br>
-                  <p class="productDescription"></p>
+                  <p class="productDescription" tabindex="0"></p>
                 </div>
                 <div class="tab-pane fade " id="review">
                  <div class="aa-product-review-area">
-                   <h4>2 avaliações para <span class="productNameFirst"></span></h4> 
+                   <h4 tabindex="0">2 avaliações para <span class="productNameFirst"></span></h4> 
                    <ul class="aa-review-nav">
                      <li>
                         <div class="media">
                           <div class="media-left">
                             <a href="#">
-                              <img class="media-object" src="img/testimonial-img-3.jpg" alt="girl image">
+                              <img class="media-object" src="img/testimonial-img-3.jpg" alt="girl image" tabindex="-1">
                             </a>
                           </div>
                           <div class="media-body">
-                            <h4 class="media-heading"><strong>Aline Vasconcellos</strong> - <span>Março 26, 2021</span></h4>
+                            <h4 class="media-heading" tabindex="0"><strong>Aline Vasconcellos</strong> - <span>Março 26, 2021</span></h4>
                             <div class="aa-product-rating">
                               <span class="fa fa-star"></span>
                               <span class="fa fa-star"></span>
                               <span class="fa fa-star"></span>
                               <span class="fa fa-star"></span>
                               <span class="fa fa-star"></span>
+                              5,0
                             </div>
-                            <p>Excelente compra que fiz. Fiz várias pesquisas e está me atendeu super bem. Estou satisfeita com o produto. Recomendo</p>
+                            <p tabindex="0">Excelente compra que fiz. Fiz várias pesquisas e está me atendeu super bem. Estou satisfeita com o produto. Recomendo</p>
                           </div>
                         </div>
                       </li>
@@ -204,19 +207,20 @@
                         <div class="media">
                           <div class="media-left">
                             <a href="#">
-                              <img class="media-object" src="img/testimonial-img-3.jpg" alt="girl image">
+                              <img class="media-object" src="img/testimonial-img-3.jpg" alt="girl image" tabindex="-1">
                             </a>
                           </div>
                           <div class="media-body">
-                            <h4 class="media-heading"><strong>João Pedro</strong> - <span>March 20, 2016</span></h4>
+                            <h4 class="media-heading" tabindex="0"><strong>João Pedro</strong> - <span>March 20, 2016</span></h4>
                             <div class="aa-product-rating">
                               <span class="fa fa-star"></span>
                               <span class="fa fa-star"></span>
                               <span class="fa fa-star"></span>
                               <span class="fa fa-star"></span>
                               <span class="fa fa-star"></span>
+                              5,0
                             </div>
-                            <p>Produto excelente, geladeira maravilhosa. chegou antes do prazo, mesmo não sendo entregue pelo magazine...recomendo!!</p>
+                            <p tabindex="0">Produto excelente, geladeira maravilhosa. chegou antes do prazo, mesmo não sendo entregue pelo magazine...recomendo!!</p>
                           </div>
                         </div>
                       </li>
@@ -234,22 +238,18 @@
 
   <!-- footer -->  
   <footer id="aa-footer">
-    <!-- footer bottom -->
-    <div class="aa-footer-top">
-     <div class="container">
+    <!-- footer-bottom -->
+    <div class="aa-footer-bottom">
+      <div class="container">
         <div class="row">
         <div class="col-md-12">
-          <div class="aa-footer-top-area">
-            <div class="row">
-              <div class="col-md-3 col-sm-6">
-                <div class="aa-footer-widget">
-                </div>
-              </div>
-            </div>
+          <div class="aa-footer-bottom-area" tabindex="0">
+            <p>Site desenvolvido como protótipo para Tese de Doutorado: <b>Diretrizes de acessibilidade em websites de comércio eletrônico para usuários cegos.</b></p>
+            <p>"Todas as informações são fictícias e não possuem viés comercial"</p>
           </div>
         </div>
       </div>
-     </div>
+      </div>
     </div>
   </footer>
   <!-- / footer -->

@@ -44,7 +44,7 @@
    <!-- wpf loader Two -->
     <div id="wpf-loader-two">          
       <div class="wpf-loader-two-inner">
-        <span>Loading</span>
+        <span tabindex="0">Carregando...</span>
       </div>
     </div> 
     <!-- / wpf loader Two -->       
@@ -63,10 +63,10 @@
             <div class="aa-header-top-area">
               <div class="aa-header-top-right">
                 <ul class="aa-head-top-nav-right">
-                  <li><a href="index.html" tabindex="1">Início</a></li>
-                  <li><a href="acessibilidade.html" tabindex="1">Acessibilidade</a></li>
-                  <li><a href="cadastreSe.html" tabindex="3">Cadastre-se</a></li>
-                  <li tabindex="4">Compre pelo telefone: (83) 9 9624-4330</li>
+                  <li><a href="index.html" tabindex="0">Início</a></li>
+                  <li><a href="acessibilidade.html" tabindex="0">Acessibilidade</a></li>
+                  <li><a href="cadastreSe.html" tabindex="0">Cadastre-se</a></li>
+                  <li tabindex="0">Compre pelo telefone: (83) 9 9624-4330</li>
                 </ul>
               </div>
             </div>
@@ -85,54 +85,13 @@
               <!-- logo  -->
               <div class="aa-logo">
                 <!-- Text based logo -->
-                <a href="index.html">
+                <a href="index.html" tabindex="0">
                   <span class="fa fa-shopping-cart" alt="Seja bem vindo ao site Magazine Paraíba, aqui você encontra tudo que precisa"></span>
                   <p>Magazine<strong>Paraíba</strong> <span>Aqui temos tudo que você precisa</span></p>
                 </a>
                 <!-- img based logo -->
                 <!-- <a href="index.html"><img src="img/logo.jpg" alt="logo img"></a> -->
               </div>
-              <!-- / logo  -->
-               <!-- cart box -->
-              <!-- <div class="aa-cartbox">
-                <a class="aa-cart-link" href="#">
-                  <span class="fa fa-shopping-basket"></span>
-                  <span class="aa-cart-title">SHOPPING CART</span>
-                  <span class="aa-cart-notify">2</span>
-                </a>
-                <div class="aa-cartbox-summary">
-                  <ul>
-                    <li>
-                      <a class="aa-cartbox-img" href="#"><img src="img/woman-small-2.jpg" alt="img"></a>
-                      <div class="aa-cartbox-info">
-                        <h4><a href="#">Product Name</a></h4>
-                        <p>1 x $250</p>
-                      </div>
-                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                    </li>
-                    <li>
-                      <a class="aa-cartbox-img" href="#"><img src="img/woman-small-1.jpg" alt="img"></a>
-                      <div class="aa-cartbox-info">
-                        <h4><a href="#">Product Name</a></h4>
-                        <p>1 x $250</p>
-                      </div>
-                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                    </li>                    
-                    <li>
-                      <span class="aa-cartbox-total-title">
-                        Total
-                      </span>
-                      <span class="aa-cartbox-total-price">
-                        $500
-                      </span>
-                    </li>
-                  </ul>
-                  <a class="aa-cartbox-checkout aa-primary-btn" href="checkout.html">Checkout</a>
-                </div>
-              </div> -->
-              <!-- / cart box -->
-              <!-- search box -->
-              <!-- / search box -->             
             </div>
           </div>
         </div>
@@ -156,7 +115,7 @@
             </button>          
           </div>
           <div class="navbar-collapse collapse nav navbar-nav" style="color:white">
-            <h1>Confirmação do Pedido</h1><br>
+            <h1 tabindex="0">Confirmação do Pedido</h1><br>
           </div>
         </div>
       </div>     
@@ -180,15 +139,15 @@
                     <div class="panel panel-default aa-checkout-coupon">
                       <div class="panel-heading">
                         <h4 class="panel-title">
-                          <a data-toggle="collapse" data-parent="#accordion" href="">
+                          <a data-toggle="collapse" data-parent="#accordion" href="" tabindex="0">
                             Tem algum cupom?
                           </a>
                         </h4>
                       </div>
                       <div id="" class="panel-collapse collapse in">
                         <div class="panel-body">
-                          <input type="text" placeholder="Digite o código do cupom" class="aa-coupon-code">
-                          <input type="button" value="Aplicar Cupom" class="aa-browse-btn" onclick="if($('.aa-coupon-code').val() == ''){alert('Digite o cupom antes de aplicar.');return false}; alert('Cupom inserido com sucesso!'); $('.cupomInserido').html($('.aa-coupon-code').val().toUpperCase())">
+                          <input type="text" placeholder="Digite o código do cupom" class="aa-coupon-code" tabindex="0">
+                          <input type="button" value="Aplicar Cupom" class="aa-browse-btn" onclick="if($('.aa-coupon-code').val() == ''){alert('Digite o cupom antes de aplicar.');return false}; alert('Cupom inserido com sucesso!'); $('.cupomInserido').html($('.aa-coupon-code').val().toUpperCase())" tabindex="0">
                         </div>
                       </div>
                     </div>
@@ -196,7 +155,7 @@
                     <div class="panel panel-default aa-checkout-billaddress">
                       <div class="panel-heading">
                         <h4 class="panel-title">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#" tabindex="0">
                             Endereço de Entrega
                           </a>
                         </h4>
@@ -206,55 +165,55 @@
                          <div class="row">
                             <div class="col-md-6">
                               <div class="aa-checkout-single-bill">
-                                <input type="text" placeholder="Primeiro Nome">
+                                <input type="text" placeholder="Primeiro Nome" tabindex="0">
                               </div>                             
                             </div>
                             <div class="col-md-6">
                               <div class="aa-checkout-single-bill">
-                                <input type="text" placeholder="Segundo Nome">
+                                <input type="text" placeholder="Segundo Nome" tabindex="0">
                               </div>
                             </div>
                           </div> 
                           <div class="row">
                             <div class="col-md-6">
                               <div class="aa-checkout-single-bill">
-                                <input type="email" placeholder="Email">
+                                <input type="email" placeholder="Email" tabindex="0">
                               </div>                             
                             </div>
                             <div class="col-md-6">
                               <div class="aa-checkout-single-bill">
-                                <input type="tel" placeholder=Telefone">
+                                <input type="tel" placeholder="Telefone" tabindex="0">
                               </div>
                             </div>
                           </div> 
                           <div class="row">
                             <div class="col-md-12">
                               <div class="aa-checkout-single-bill">
-                                <input type="tel" placeholder="Endereço">
+                                <input type="tel" placeholder="Endereço" tabindex="0">
                               </div>                             
                             </div>                            
                           </div>   
                           <div class="row">
                             <div class="col-md-6">
                               <div class="aa-checkout-single-bill">
-                                <input type="text" placeholder="Complemento">
+                                <input type="text" placeholder="Complemento" tabindex="0">
                               </div>                             
                             </div>
                             <div class="col-md-6">
                               <div class="aa-checkout-single-bill">
-                                <input type="text" placeholder="Cidade">
+                                <input type="text" placeholder="Cidade" tabindex="0">
                               </div>
                             </div>
                           </div>   
                           <div class="row">
                             <div class="col-md-6">
                               <div class="aa-checkout-single-bill">
-                                <input type="text" placeholder="Estado">
+                                <input type="text" placeholder="Estado" tabindex="0">
                               </div>                             
                             </div>
                             <div class="col-md-6">
                               <div class="aa-checkout-single-bill">
-                                <input type="text" placeholder="CEP">
+                                <input type="text" placeholder="CEP" tabindex="0">
                               </div>
                             </div>
                           </div>               
@@ -266,9 +225,9 @@
               </div>
               <div class="col-md-4">
                 <div class="checkout-right">
-                  <h4>Pedido</h4>
+                  <h4 tabindex="0">Pedido</h4>
                   <div class="aa-order-summary-area">
-                    <table class="table table-responsive">
+                    <table class="table table-responsive" tabindex="0">
                       <thead>
                         <tr>
                           <th>Produto</th>
@@ -283,14 +242,14 @@
                       </tbody>
                     </table>
                   </div>
-                  <span>Cupom aplicado: <b><i class="cupomInserido">FRETEGRATIS</i></b></span>
+                  <span tabindex="0">Cupom aplicado: <b><i class="cupomInserido">FRETEGRATIS</i></b></span>
                   <br><br>
-                  <h4>Método de Pagamento</h4>
+                  <h4 tabindex="0">Método de Pagamento</h4>
                   <div class="aa-payment-method">                    
-                    <label for="cashdelivery"><input type="radio" id="cashdelivery" name="optionsRadios"> Pagamento na Entrega</label>
-                    <label for="paypal"><input type="radio" id="paypal" name="optionsRadios" checked> Cartão de Crédito </label>
-                    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg" border="0" alt="PayPal Acceptance Mark">    
-                    <input type="button" value="Finalizar Pedido" class="aa-browse-btn" onclick="alert('Pedido realizado com sucesso!');window.location.href = 'index.html';">                
+                    <label for="cashdelivery"><input type="radio" id="cashdelivery" name="optionsRadios" tabindex="0"> Pagamento na Entrega</label>
+                    <label for="paypal"><input type="radio" id="paypal" name="optionsRadios" checked tabindex="0"> Cartão de Crédito </label>
+                    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg" border="0" alt="Aceito Paypal, Visa, Mastercard, American Express e Discover Network" tabindex="0">    
+                    <input type="button" value="Finalizar Pedido" class="aa-browse-btn" onclick="alert('Pedido realizado com sucesso! Você será redirecionado para Página Inicial.');window.location.href = 'index.html';" tabindex="0">                
                   </div>
                 </div>
               </div>
@@ -310,8 +269,8 @@
       <div class="container">
         <div class="row">
         <div class="col-md-12">
-          <div class="aa-footer-bottom-area">
-            <p>Site desenvolvido como protótipo para Tese de Doutorado: <b>Diretrizes de acessibilidade em websites de comércio eletrônico para usuários cegos</b></p>
+          <div class="aa-footer-bottom-area" tabindex="0">
+            <p>Site desenvolvido como protótipo para Tese de Doutorado: <b>Diretrizes de acessibilidade em websites de comércio eletrônico para usuários cegos.</b></p>
             <p>"Todas as informações são fictícias e não possuem viés comercial"</p>
           </div>
         </div>
