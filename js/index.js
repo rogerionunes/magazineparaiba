@@ -1,8 +1,27 @@
 jQuery(function($) {
 
+  toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-top-center",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "2000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+
   var productList1 = [];
   var productList2 = [];
   var productList3 = [];
+  var productList4 = [];
 
   productList1.push({
     id: 1,
@@ -42,7 +61,7 @@ jQuery(function($) {
 
   productList1.push({
     id: 4,
-    name: 'Smartphone Samsung Galaxy A31 128GB Branco 4G - Octa-Core 4GB RAM Tela 6,4” Câm.Quádrupla + Selfie',
+    name: 'Smartphone Samsung Galaxy A31 Celular 128GB Branco 4G - Octa-Core 4GB RAM Tela 6,4” Câm.Quádrupla + Selfie',
     altName: 'Smartphone Samsung Galaxy A31 128GB Branco 4G - Octa-Core 4GB RAM Tela 6,4” Câm.Quádrupla + Selfie',
     valorDe: 'R$ 2.299,00',
     valorPor: 'R$ 1.439,00',
@@ -58,12 +77,14 @@ jQuery(function($) {
     productHtml += `
                 <li>
                   <figure>
-                    <a class="aa-product-img" href="product-detail.html?${product.id}#tituloPagina"  tabindex="0"><img src="${product.pathImage}" alt="${product.altName}" height="200"></a>
+                    <a tabindex="0" class="aa-product-img" href="product-detail.html?${product.id}#tituloPagina"><img src="${product.pathImage}" alt="${product.altName}" height="200"></a>
                       <figcaption>
-                      <h4 class="aa-product-title" ><a href="product-detail.html?${product.id}#tituloPagina" tabindex="-1">${product.name}
-
-                      <p tabindex="0">De <b class="aa-product-price">${product.valorDe}</b> por <b class="aa-product-price">${product.valorPor}</b></p>
-                      </a></h4>
+                      <h4 class="aa-product-title" >
+                        <a href="product-detail.html?${product.id}#tituloPagina" tabindex="-1">${product.name}
+                          <p tabindex="0">De <b class="aa-product-price">${product.valorDe}</b> por <b class="aa-product-price">${product.valorPor}</b></p>
+                          <p>Clique para saber mais</p>
+                        </a>
+                      </h4>
                     </figcaption>
                   </figure>
                 </li>
@@ -131,6 +152,7 @@ jQuery(function($) {
                       <h4 class="aa-product-title" ><a href="product-detail.html?${product.id}#tituloPagina" tabindex="-1">${product.name}
 
                       <p tabindex="0">De <b class="aa-product-price">${product.valorDe}</b> por <b class="aa-product-price">${product.valorPor}</b></p>
+                      <p>Clique para saber mais</p>
                       </a></h4>
                     </figcaption>
                   </figure>
@@ -166,7 +188,7 @@ jQuery(function($) {
 
   productList3.push({
     id: 11,
-    name: 'iPhone XR Apple 128GB Branco 6,1” 12MP iOS',
+    name: 'iPhone XR Apple Celular 128GB Branco 6,1” 12MP iOS',
     altName: 'iPhone XR Apple 128 gigabytes Branco 6,1 polegadas 12 megapizels iOS',
     valorDe: 'R$ 5.500,00',
     valorPor: 'R$ 4.400,00',
@@ -178,7 +200,7 @@ jQuery(function($) {
 
   productList3.push({
     id: 12,
-    name: 'iPhone SE Apple 64GB Preto 4,7” 12MP iOS',
+    name: 'iPhone SE Apple Celular 64GB Preto 4,7” 12MP iOS',
     altName: 'iPhone SE Apple 64 gigabytes Preto 4,7 polegadas 12 megapixels iOS',
     valorDe: 'R$ 3.700,00',
     valorPor: 'R$ 3.050,00',
@@ -203,12 +225,64 @@ jQuery(function($) {
                       <h4 class="aa-product-title" ><a href="product-detail.html?${product.id}#tituloPagina" tabindex="-1">${product.name}
 
                       <p tabindex="0">De <b class="aa-product-price">${product.valorDe}</b> por <b class="aa-product-price">${product.valorPor}</b></p>
+                      <p>Clique para saber mais</p>
                       </a></h4>
                     </figcaption>
                   </figure>
                 </li>
                 `;
   });
+
+  $('.productList3').html(productHtml);
+
+  productList4.push({
+    id: 13,
+    name: 'Geladeira Frost Free Electrolux 454 Litros Inverse Branca (DB53)',
+    altName: 'Geladeira Branca Frost Free Electrolux 454 Litros Inverse Branca (DB53)',
+    valorDe: 'R$ 4.279,00',
+    valorPor: 'R$ 3.068,07',
+    valorParcelado: 'R$ 3.505,00',
+    valorParcelas: 'R$ 350,50',
+    pathImage: 'img/img13.jpg',
+    descricao: 'Tenha mais espaço e comodidade para guardar seus alimentos com o Refrigerador Frost Free Bottom Freezer 454 Litros DB53 . Com espaços específicos para todo tipo de alimento, você poderá organizá-los da melhor maneira possível. O Refrigerador Frost Free da Electrolux conta com prateleiras deslizantes para facilitar a sua vida e otimizar seu tempo. Ele também vem com espaços criados para ovos, frutas e legumes e um espaço no freezer para alimentos que precisam ser armazenados em temperaturas baixas.Tudo isso somado a um design que une praticidade e elegância, com o freezer na parte de baixo e a geladeira na parte de cima. Assim você terá mais facilidade no seu dia-a-dia. CONSUMIDOR, ESTE PRODUTO POSSUI DISPOSITIVO QUE ACUMULA ÁGUA DE DEGELO!'
+  });
+
+  productList4.push({
+    id: 14,
+    name: 'Notebook 2 em 1 Dell Inspiron 5406-M30S 14” Full HD Touch 11ª Geração Intel Core i7 8GB 256GB SSD Windows 10 McAfee',
+    altName: 'Notebook Branco 2 em 1 Dell Inspiron 5406-M30S 14” Full HD Touch 11ª Geração Intel Core i7 8GB 256GB SSD Windows 10 McAfee',
+    valorDe: 'R$ 7.550,00',
+    valorPor: 'R$ 6.479,10',
+    valorParcelado: 'R$ 7.199,00',
+    valorParcelas: 'R$ 719,90',
+    pathImage: 'img/img14.jpg',
+    descricao: 'Tenha mais espaço e comodidade para guardar seus alimentos com o Refrigerador Frost Free Bottom Freezer 454 Litros DB53 . Com espaços específicos para todo tipo de alimento, você poderá organizá-los da melhor maneira possível. O Refrigerador Frost Free da Electrolux conta com prateleiras deslizantes para facilitar a sua vida e otimizar seu tempo. Ele também vem com espaços criados para ovos, frutas e legumes e um espaço no freezer para alimentos que precisam ser armazenados em temperaturas baixas.Tudo isso somado a um design que une praticidade e elegância, com o freezer na parte de baixo e a geladeira na parte de cima. Assim você terá mais facilidade no seu dia-a-dia. CONSUMIDOR, ESTE PRODUTO POSSUI DISPOSITIVO QUE ACUMULA ÁGUA DE DEGELO!'
+  });
+
+  var productHtml = '';
+
+  /**
+   * HOME
+   */
+
+  $.each(productList4, function(i, product) {
+    productHtml += `
+                <li>
+                  <figure>
+                    <a class="aa-product-img" href="product-detail.html?${product.id}#tituloPagina"  tabindex="0"><img src="${product.pathImage}" alt="${product.altName}" height="200"></a>
+                      <figcaption>
+                      <h4 class="aa-product-title" ><a href="product-detail.html?${product.id}#tituloPagina" tabindex="-1">${product.name}
+
+                      <p tabindex="0">De <b class="aa-product-price">${product.valorDe}</b> por <b class="aa-product-price">${product.valorPor}</b></p>
+                      <p>Clique para saber mais</p>
+                      </a></h4>
+                    </figcaption>
+                  </figure>
+                </li>
+                `;
+  });
+
+  $('.productList4').html(productHtml);
 
   $('#celulares').on('click', function(e) {
     searchProducts('ids', [4, 11, 12]);
@@ -219,7 +293,7 @@ jQuery(function($) {
   });
 
   $('#eletrodomestricos').on('click', function(e) {
-    searchProducts('ids', [1]);
+    searchProducts('ids', [1, 13]);
   });
 
   $('#tvVideo').on('click', function(e) {
@@ -227,10 +301,8 @@ jQuery(function($) {
   });
 
   $('#informatica').on('click', function(e) {
-    searchProducts('ids', [2,3,8]);
+    searchProducts('ids', [2,3,8, 14]);
   });
-
-  $('.productList3').html(productHtml);
 
   $('#formSearch').on('submit', function(e) {
       e.preventDefault();
@@ -243,7 +315,7 @@ jQuery(function($) {
     var productListAll = [];
     var filtered = [];
 
-    productListAll = productListAll.concat(productList1).concat(productList2).concat(productList3);
+    productListAll = productListAll.concat(productList1).concat(productList2).concat(productList3).concat(productList4);
 
     if (search == 'ids') {
       filtered = productListAll.filter((item)=>{return products.includes(item.id)});
@@ -252,7 +324,7 @@ jQuery(function($) {
     }
 
     if (filtered.length == '0') {
-      alert('Nenhum Produto Encontrado');
+      toastr["error"]("Nenhum Produto Encontrado!");
       return false;
     }
 
@@ -275,6 +347,7 @@ jQuery(function($) {
                             <h4 class="aa-product-title" ><a href="product-detail.html?${product.id}#tituloPagina" tabindex="-1">${product.name}
       
                             <p tabindex="0">De <b class="aa-product-price">${product.valorDe}</b> por <b class="aa-product-price">${product.valorPor}</b></p>
+                            <p>Clique para saber mais</p>
                             </a></h4>
                           </figcaption>
                         </figure>

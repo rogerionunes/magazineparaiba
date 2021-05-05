@@ -23,6 +23,8 @@
     <!-- <link id="switcher" href="css/theme-color/bridge-theme.css" rel="stylesheet"> -->
     <!-- Top Slider CSS -->
     <link href="css/sequence-theme.modern-slide-in.css" rel="stylesheet" media="all">
+    <!-- Toastr -->
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css' rel='stylesheet' type='text/css'>
 
     <!-- Main style sheet -->
     <link href="css/style.css" rel="stylesheet">    
@@ -69,7 +71,7 @@
                   <li><a href="index.html" tabindex="0">Início</a></li>
                   <li><a href="acessibilidade.html" tabindex="0">Acessibilidade</a></li>
                   <li><a href="cadastreSe.html" tabindex="0">Cadastre-se</a></li>
-                  <li tabindex="0">Compre pelo telefone: (83) 9 9624-4330</li>
+                  <li tabindex="4">Compre pelo telefone: (00) 00000-0000</li>
                 </ul>
               </div>
             </div>
@@ -215,45 +217,71 @@
   <script type="text/javascript" src="js/slick.js"></script>
   <!-- Price picker slider -->
   <script type="text/javascript" src="js/nouislider.js"></script>
+  <!-- Toastr -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
   <!-- Custom js -->
   <script src="js/custom.js"></script> 
   <script src="js/index.js"></script> 
 
   <script>
 
+    toastr.options = {
+      "closeButton": false,
+      "debug": false,
+      "newestOnTop": false,
+      "progressBar": false,
+      "positionClass": "toast-top-center",
+      "preventDuplicates": false,
+      "onclick": null,
+      "showDuration": "300",
+      "hideDuration": "1000",
+      "timeOut": "2000",
+      "extendedTimeOut": "1000",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+
     $(document).on('click', '#btnCadastrar', function() {
       if (!$('[name="tipoConta"]').prop('checked')) {
-        alert('O campo Tipo de Conta é obrigatório');
+        toastr['error']('O campo Tipo de Conta é obrigatório')
+        // alert('O campo Tipo de Conta é obrigatório');
         $('[name="tipoConta"]').focus();
         return false;
       }
 
       if ($('#email').val() == '') {
-        alert('O campo Email é obrigatório');
+        toastr['error']('O campo Email é obrigatório')
+        // alert('O campo Email é obrigatório');
         $('#email').focus();
         return false;
       }
       
       if ($('#cpf').val() == '') {
-        alert('O campo CPF é obrigatório');
+        toastr['error']('O campo CPF é obrigatório')
+        // alert('O campo CPF é obrigatório');
         $('#cpf').focus();
         return false;
       }
       
       if ($('#nome').val() == '') {
-        alert('O campo Nome Completo é obrigatório');
+        toastr['error']('O campo Nome Completo é obrigatório')
+        // alert('O campo Nome Completo é obrigatório');
         $('#nome').focus();
         return false;
       }
       
       if ($('#senha').val() == '') {
-        alert('O campo Senha é obrigatório');
+        toastr['error']('O campo Senha é obrigatório')
+        // alert('O campo Senha é obrigatório');
         $('#senha').focus();
         return false;
       }
-
-      alert('Usuário cadastrado com sucesso!');
-      window.location.href = "index.html";
+        
+      toastr['success']('Usuário cadastrado com sucesso!');
+      // alert('Usuário cadastrado com sucesso!');
+      setTimeout(() => window.location.href = "index.html", 2500);
     });
   </script>
 
