@@ -149,7 +149,7 @@
                       <div id="" class="panel-collapse collapse in">
                         <div class="panel-body">
                           <input type="text" placeholder="Digite o código do cupom" class="aa-coupon-code" tabindex="0">
-                          <input type="button" value="Aplicar Cupom" class="aa-browse-btn" onclick="if($('.aa-coupon-code').val() == ''){ toastr['error']('Digite o cupom antes de aplicar.');/*alert('Digite o cupom antes de aplicar.');*/return false}; toastr['success']('Cupom inserido com sucesso!');/*alert('Cupom inserido com sucesso!');*/ $('.cupomInserido').html($('.aa-coupon-code').val().toUpperCase())" tabindex="0">
+                          <input type="button" value="Aplicar Cupom" class="aa-browse-btn" onclick="if($('.aa-coupon-code').val() == ''){ alert('Digite o cupom antes de aplicar.');return false}; alert('Cupom inserido com sucesso!'); $('.cupomInserido').html($('.aa-coupon-code').val().toUpperCase())" tabindex="0">
                         </div>
                       </div>
                     </div>
@@ -251,7 +251,7 @@
                     <label for="cashdelivery"><input type="radio" id="cashdelivery" name="optionsRadios" tabindex="0"> Pagamento na Entrega</label>
                     <label for="paypal"><input type="radio" id="paypal" name="optionsRadios" checked tabindex="0"> Cartão de Crédito </label>
                     <img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg" border="0" alt="Aceito Paypal, Visa, Mastercard, American Express e Discover Network" tabindex="0">    
-                    <input type="button" value="Finalizar Pedido" class="aa-browse-btn" onclick="toastr['success']('Pedido realizado com sucesso! Você será redirecionado para Página Inicial.');/*alert('Pedido realizado com sucesso! Você será redirecionado para Página Inicial.');*/ setTimeout(() => window.location.href = 'index.html', 2500);" tabindex="0">                
+                    <input type="button" value="Finalizar Pedido" class="aa-browse-btn" onclick="alert('Pedido realizado com sucesso! Você será redirecionado para Página Inicial.'); setTimeout(() => window.location.href = 'index.html', 2500);" tabindex="0">                
                   </div>
                 </div>
               </div>

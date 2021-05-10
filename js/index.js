@@ -1,23 +1,5 @@
 jQuery(function($) {
 
-  toastr.options = {
-    "closeButton": false,
-    "debug": false,
-    "newestOnTop": false,
-    "progressBar": false,
-    "positionClass": "toast-top-center",
-    "preventDuplicates": false,
-    "onclick": null,
-    "showDuration": "300",
-    "hideDuration": "1000",
-    "timeOut": "2000",
-    "extendedTimeOut": "1000",
-    "showEasing": "swing",
-    "hideEasing": "linear",
-    "showMethod": "fadeIn",
-    "hideMethod": "fadeOut"
-  }
-
   var productList1 = [];
   var productList2 = [];
   var productList3 = [];
@@ -324,7 +306,7 @@ jQuery(function($) {
     }
 
     if (filtered.length == '0') {
-      toastr["error"]("Nenhum Produto Encontrado!");
+      alert("Nenhum Produto Encontrado!");
       return false;
     }
 
@@ -367,7 +349,11 @@ jQuery(function($) {
     }
 
   }
-
+  $('body').on('keyup', function(e) {
+    if (e.keyCode == 8) {
+      history.go(-1)
+    }
+  });
 
   $('#formSearch').on('keyup', function(e) {
     if (e.keyCode === 27) {
