@@ -1,5 +1,25 @@
 jQuery(function($) {
 
+  var baseUrl = 'https://magazineparaiba.com.br/';
+
+  toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-top-center",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "2000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+
   var productList1 = [];
   var productList2 = [];
   var productList3 = [];
@@ -366,10 +386,55 @@ jQuery(function($) {
   });
 
   /**
+   * Cadastro
+   */
+
+  $(document).on('click', '#btnCadastrar', function() {
+    if (!$('[name="tipoConta"]').prop('checked')) {
+      toastr['error']('O campo Tipo de Conta é obrigatório')
+      // alert('O campo Tipo de Conta é obrigatório');
+      $('[name="tipoConta"]').focus();
+      return false;
+    }
+
+    if ($('#email').val() == '') {
+      toastr['error']('O campo Email é obrigatório')
+      // alert('O campo Email é obrigatório');
+      $('#email').focus();
+      return false;
+    }
+    
+    if ($('#cpf').val() == '') {
+      toastr['error']('O campo CPF é obrigatório')
+      // alert('O campo CPF é obrigatório');
+      $('#cpf').focus();
+      return false;
+    }
+    
+    if ($('#nome').val() == '') {
+      toastr['error']('O campo Nome Completo é obrigatório')
+      // alert('O campo Nome Completo é obrigatório');
+      $('#nome').focus();
+      return false;
+    }
+    
+    if ($('#senha').val() == '') {
+      toastr['error']('O campo Senha é obrigatório')
+      // alert('O campo Senha é obrigatório');
+      $('#senha').focus();
+      return false;
+    }
+      
+    toastr['success']('Usuário cadastrado com sucesso!');
+    // alert('Usuário cadastrado com sucesso!');
+    setTimeout(() => window.location.href = baseUrl+"index.html", 2500);
+  });
+
+  /**
    * PRODUCT DETAIL
    */
 
-   $('#cepInputText').on('keyup', function(e) {
+  $('#cepInputText').on('keyup', function(e) {
 
     str = $(this).val();
     str = str.replace(/[^0-9]/gi,'');
@@ -406,5 +471,9 @@ jQuery(function($) {
     $('.productNameFirst').html(produtoAtual[0]['name'].split(' ')[0] + ' ' + produtoAtual[0]['name'].split(' ')[1]);
     $('.aa-add-to-cart-btn').attr('href', 'checkout.html?'+idProduto);
   }
+
+  $("link, a").each(function(index) {
+    $(this).attr('href', baseUrl + $(this).attr('href'));
+  });
     
 });
