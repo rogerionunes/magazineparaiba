@@ -368,10 +368,49 @@ jQuery(function($) {
   });
 
   /**
+   * Cadastro
+   */
+
+  $(document).on('click', '#btnCadastrar', function() {
+    if (!$('[name="tipoConta"]').prop('checked')) {
+      alert('O campo Tipo de Conta é obrigatório');
+      $('[name="tipoConta"]').focus();
+      return false;
+    }
+
+    if ($('#email').val() == '') {
+      alert('O campo Email é obrigatório');
+      $('#email').focus();
+      return false;
+    }
+    
+    if ($('#cpf').val() == '') {
+      alert('O campo CPF é obrigatório');
+      $('#cpf').focus();
+      return false;
+    }
+    
+    if ($('#nome').val() == '') {
+      alert('O campo Nome Completo é obrigatório');
+      $('#nome').focus();
+      return false;
+    }
+    
+    if ($('#senha').val() == '') {
+      alert('O campo Senha é obrigatório');
+      $('#senha').focus();
+      return false;
+    }
+      
+    alert('Usuário cadastrado com sucesso!');
+    setTimeout(() => window.location.href = "index.html", 2500);
+  });
+
+  /**
    * PRODUCT DETAIL
    */
 
-   $('#cepInputText').on('keyup', function(e) {
+  $('#cepInputText').on('keyup', function(e) {
 
     str = $(this).val();
     str = str.replace(/[^0-9]/gi,'');
