@@ -349,8 +349,10 @@ jQuery(function($) {
     }
 
   }
+
   $('body').on('keyup', function(e) {
-    if (e.keyCode == 8) {
+    // console.log(e.keyCode);
+    if (e.keyCode == 17) {
       history.go(-1)
     }
   });
@@ -376,10 +378,10 @@ jQuery(function($) {
 
     if (str.length == 8) {
       $('#cepInputText').val(str.substring(0,2)+'.'+str.substring(2,5)+'-'+str.substring(5,8));
-      $('.valorFrete').html('Valor do Frete: R$ 35,00');
+      $('.valorFrete').html('Valor do Frete: R$ 35,00').attr('tabindex', '0');
     } else {
       $('#cepInputText').val(str);
-      $('.valorFrete').html('');
+      $('.valorFrete').html('').attr('tabindex', '-1');
     }
   });
 
