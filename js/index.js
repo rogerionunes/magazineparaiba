@@ -352,7 +352,7 @@ jQuery(function($) {
 
   $('body').on('keyup', function(e) {
     // console.log(e.keyCode);
-    if (e.keyCode == 17) {
+    if (e.keyCode == 225) {
       history.go(-1)
     }
   });
