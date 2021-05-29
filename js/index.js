@@ -340,7 +340,7 @@ jQuery(function($) {
         $('.productListSearch').html(productHtml);
         // $('#buttonSearch').attr('disabled', true);
         $('#tituloProdutosEncontrados').html(filtered.length == 1 ? filtered.length+' Produto Encontrado:' : filtered.length+' Produtos Encontrados:');
-        $('.aa-product-img').focus();
+        $('.productListSearch .aa-product-img:first').focus();
     } else {
         // $('#buttonSearch').attr('disabled', false);
         $('.navbar').show();
