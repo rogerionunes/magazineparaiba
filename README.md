@@ -1,2 +1,2 @@
 # magazineparaiba
-Protótipo de site simulando ser uma loja virtual
+Protótipo de uma loja virtual
